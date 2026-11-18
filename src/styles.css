@@ -1,0 +1,73 @@
+@import "tailwindcss";
+@source "./";
+
+@theme {
+  --font-sans: "Figtree", "Segoe UI", sans-serif;
+  --font-display: "Fraunces", Georgia, serif;
+  --color-bg: #12100e;
+  --color-surface: #1c1814;
+  --color-surface-2: #26211c;
+  --color-paper: #f6f1ea;
+  --color-ink: #231c16;
+  --color-ink-soft: #5c5148;
+  --color-fg: #f6f1ea;
+  --color-muted: #a3988c;
+  --color-primary: #d4654a;
+  --color-primary-fg: #1a0e0a;
+  --color-border: #3a322b;
+  --color-gold: #e8b86d;
+  --radius-sm: 0.5rem;
+  --radius-md: 0.875rem;
+  --radius-lg: 1.25rem;
+}
+
+@layer base {
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  html,
+  body {
+    height: 100%;
+    overflow: hidden;
+    background: var(--color-bg);
+  }
+
+  body {
+    margin: 0;
+    min-height: 0;
+    color: var(--color-fg);
+    font-family: var(--font-sans);
+    line-height: 1.5;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation: none !important;
+      transition: none !important;
+    }
+  }
+}
+
+input[type="file"] {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  clip: auto;
+  clip-path: none;
+  white-space: normal;
+  opacity: 0;
+}
